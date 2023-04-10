@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<!--ML App-->
+		</div>
+		<h2>Spam Detection For Youtube Comments</h2>
+
+	</div>
+	</header>
+	<br>
+	<p style="color:rgb(255, 255, 255);font-size:20;text-align: center;"><b>Results for Comment with a Accuracy of 94 %</b></p><br><br>
+<center>
+	<div class="results">
+	
+	{% if prediction == 'spam' %}:
+		<h2 style="color:red;font-size: 50px;">Spam</h2>
+	{% elif prediction == 'ham' %}:
+		<h2 style="color:blue;font-size: 50px;">Not a Spam (It's a Ham)</h2>
+	{% else %}:
+		<h2>Unable to Recognize the comment</h2>
+	{% endif %}
+	</div>
+</center>
+</body>
+</html>
